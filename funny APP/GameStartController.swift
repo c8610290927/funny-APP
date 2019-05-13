@@ -15,6 +15,15 @@ var score = 0
 var checkClick = 0
 
 class GameStartController: ViewController {
+    
+    class bug
+    {
+        var position:Int
+        init()
+        {
+            self.position = Int.random(in: 1...9)
+        }
+    }
 
     
     @IBOutlet weak var button1: UIButton!
@@ -32,6 +41,8 @@ class GameStartController: ViewController {
     @IBOutlet weak var nextPageButton: UIButton!
     let dieBugImage = UIImage(named: "dieBug.png")
     let bugImage = UIImage(named: "bug.png")
+    
+    @IBOutlet weak var timeAlert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +68,12 @@ class GameStartController: ViewController {
             self.timeLabel.text = String(sec)
             if sec > 0{
                 sec = sec - 1
+                if sec < 10
+                {
+                    UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 5, delay: 0.5, animations: {
+                        self.timeAlert.center = CGPoint(x:530, y:849)
+                    })
+                }
             }
             else
             {

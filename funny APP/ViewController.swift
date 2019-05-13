@@ -7,17 +7,27 @@
 //
 
 import UIKit
-import SafariServices
 import UserNotifications
 
-class ViewController: UIViewController, SFSafariViewControllerDelegate {
+class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let content = UNMutableNotificationContent()
+        content.title = "快來消滅無所不在的蟲蟲吧！！！"
+        content.subtitle = "可憐的農場農夫qwq"
+        content.body = "天啊！這些蟲已經困擾我好幾天了！請撥空前來幫助我消滅他們！"
+        content.badge = 1
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
        }
 
-   
+    
+    
     
     
     @IBAction func GameRule(_ sender: Any) {
@@ -33,6 +43,8 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         let okAction = UIAlertAction(title: "我要超越他！", style: .default, handler: nil)
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
+        
+        
     }
 }
 

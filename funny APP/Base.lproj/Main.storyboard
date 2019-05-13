@@ -223,6 +223,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="注意時間喔～～～" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK0-md-m9d">
+                                <rect key="frame" x="-220" y="849" width="227" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.13967264322406625" green="0.33996272208121825" blue="0.14494101721179586" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0rd-Ou-4D9"/>
@@ -239,6 +246,7 @@
                         <outlet property="button9" destination="kEd-s2-jUc" id="e1j-OV-eoU"/>
                         <outlet property="nextPageButton" destination="Hlg-ER-NFo" id="r2p-BY-XNB"/>
                         <outlet property="scoreLabel" destination="8ye-j7-1nG" id="FOf-lB-TtS"/>
+                        <outlet property="timeAlert" destination="oK0-md-m9d" id="FeR-oR-139"/>
                         <outlet property="timeLabel" destination="fZw-0q-GHe" id="2uv-dW-LPb"/>
                         <outlet property="timeUpPic" destination="KKg-H7-vuW" id="OoU-Ez-hiI"/>
                     </connections>
@@ -300,6 +308,17 @@
                                 <color key="textColor" red="0.1122445593" green="0.24117345740000001" blue="0.31735802660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAV-QS-HgN">
+                                <rect key="frame" x="182" y="713" width="51" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="廣告">
+                                    <color key="titleColor" red="0.34407578129999999" green="0.4201725006" blue="0.73374048219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="urlLink:" destination="aos-SD-MwB" eventType="touchUpInside" id="kp8-XE-Kkk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ubs-FE-PTd"/>

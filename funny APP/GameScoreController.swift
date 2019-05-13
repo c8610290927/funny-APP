@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class GameScoreController: ViewController {
+class GameScoreController: ViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var score: UILabel!
     var scoreText : String?
@@ -35,8 +36,17 @@ class GameScoreController: ViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func urlLink(_ sender: Any) {
+        if let url = URL(string: "https://developer.apple.com") {
+            let controller = SFSafariViewController(url: url)
+            controller.delegate = self
+            present(controller, animated: true, completion: nil)
+        }
+    }
     
 
+    
+    
     @IBAction func retry(_ sender: UIButton) {
         if let controller = storyboard?.instantiateViewController(withIdentifier: "second") {
             present(controller, animated: true, completion: nil)
